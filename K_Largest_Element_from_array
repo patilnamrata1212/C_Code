@@ -1,0 +1,38 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int count,k,i,j,temp;
+    printf("Enter count and k : ");
+    scanf("%d %d",&count,&k);
+    int input_arr[count];
+    
+    for(i=0;i<count;i++)
+    {
+        printf("Enter Number : ");
+        scanf("%d",&input_arr[i]);
+    }
+    
+    for(j=0 ; j<k ; j++)
+    {
+        for(i=0 ; i<(count-j) ; i++)
+        {
+            if(input_arr[j] < input_arr[i+j])
+            {
+                temp = input_arr[j];
+                input_arr[j] = input_arr[i+j];
+                input_arr[i+j] =temp;
+            }
+        }
+        printf("%d ",input_arr[j]);
+    }
+    return 0;
+}
