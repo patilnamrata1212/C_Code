@@ -59,6 +59,20 @@ void DeleteNode(struct Node **Head, int position)
         prev->next = curr->next;
     }
 }
+int SearchNode(struct Node **Head, int Data)
+{
+    struct Node *curr = *Head;
+    while(curr != NULL)
+    {
+        if(Data == curr->data)
+        {
+            return 1;
+        }
+        curr = curr->next;
+    }
+    return 0;
+}
+
 void printLink(struct Node **Head)
 {
     struct Node *curr = *Head;
@@ -84,5 +98,6 @@ int main()
     DeleteNode(&Head, 1);
     printLink(&Head);
     printf("\n__________________________\n");
+    printf("%d\n",SearchNode(&Head,10));
     return 0;
 }
