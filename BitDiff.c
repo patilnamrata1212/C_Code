@@ -40,3 +40,24 @@ int main()
    return 0;
 
 }
+
+
+/***********************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int a=10,b=5; //1010 , 0101
+    int temp  = a^b;
+    int count = 0;
+    while(temp != 0)
+    {
+        if(temp & 0x01)
+        {
+            ++count;
+        }
+        temp = temp >> 1;
+    }
+    printf("%d\n",count);
+    return 0;
+};
