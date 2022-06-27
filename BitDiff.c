@@ -22,8 +22,8 @@ int BitDiff(int a,int b)
     int count = 0;
     while(a != 0 & b != 0)
     {
-        temp_a = a >> 1;
-        temp_b = b >> 1;
+        temp_a = a & 1;
+        temp_b = b & 1;
         if (temp_b != temp_a )
         {
             ++count;
