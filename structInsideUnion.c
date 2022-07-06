@@ -24,3 +24,27 @@ int main()
 //union : 4321
 // struct : 21 43 65 87
 //
+
+
+//---------------------------------------------------------------------------------------------------------------------------------///
+#include <stdio.h>
+
+typedef union value
+{
+    int a;
+    struct
+    {
+        char arr[8];
+    }nibbleValues;
+    
+}value;
+
+int main()
+{
+    value obj;
+    obj.a = 0x12345678;
+    
+    printf("%x %x %x %x\n",obj.nibbleValues.arr[0],obj.nibbleValues.arr[1],obj.nibbleValues.arr[2],obj.nibbleValues.arr[3]);
+
+    return 0;
+}
